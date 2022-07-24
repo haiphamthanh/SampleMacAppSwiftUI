@@ -11,6 +11,8 @@
 		D3C0664B288D9F0E00183AAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0664A288D9F0E00183AAD /* ContentView.swift */; };
 		D3C0664D288D9F0F00183AAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C0664C288D9F0F00183AAD /* Assets.xcassets */; };
 		D3C06650288D9F0F00183AAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C0664F288D9F0F00183AAD /* Preview Assets.xcassets */; };
+		D3C0665B288DA9F100183AAD /* GenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0665A288DA9F100183AAD /* GenerationView.swift */; };
+		D3C0665D288DAE5200183AAD /* DataCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0665C288DAE5200183AAD /* DataCollectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		D3C0664C288D9F0F00183AAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C0664F288D9F0F00183AAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3C06651288D9F0F00183AAD /* SampleMacAppSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleMacAppSwiftUI.entitlements; sourceTree = "<group>"; };
+		D3C06657288DA37000183AAD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D3C0665A288DA9F100183AAD /* GenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationView.swift; sourceTree = "<group>"; };
+		D3C0665C288DAE5200183AAD /* DataCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +57,14 @@
 		D3C06647288D9F0E00183AAD /* SampleMacAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				D3C06659288DA9C500183AAD /* DataCollection */,
+				D3C06658288DA9B600183AAD /* Generation */,
 				D3C06648288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift */,
 				D3C0664A288D9F0E00183AAD /* ContentView.swift */,
 				D3C0664C288D9F0F00183AAD /* Assets.xcassets */,
 				D3C06651288D9F0F00183AAD /* SampleMacAppSwiftUI.entitlements */,
 				D3C0664E288D9F0F00183AAD /* Preview Content */,
+				D3C06657288DA37000183AAD /* README.md */,
 			);
 			path = SampleMacAppSwiftUI;
 			sourceTree = "<group>";
@@ -67,6 +75,22 @@
 				D3C0664F288D9F0F00183AAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3C06658288DA9B600183AAD /* Generation */ = {
+			isa = PBXGroup;
+			children = (
+				D3C0665A288DA9F100183AAD /* GenerationView.swift */,
+			);
+			path = Generation;
+			sourceTree = "<group>";
+		};
+		D3C06659288DA9C500183AAD /* DataCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D3C0665C288DAE5200183AAD /* DataCollectView.swift */,
+			);
+			path = DataCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +165,8 @@
 			files = (
 				D3C0664B288D9F0E00183AAD /* ContentView.swift in Sources */,
 				D3C06649288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift in Sources */,
+				D3C0665B288DA9F100183AAD /* GenerationView.swift in Sources */,
+				D3C0665D288DAE5200183AAD /* DataCollectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

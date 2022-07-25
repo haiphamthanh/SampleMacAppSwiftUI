@@ -15,7 +15,7 @@ struct ContentView: View {
 					Text("Monitoring data")
 				}
 				
-				NavigationLink(destination: DataCollectView()) {
+				NavigationLink(destination: DataCollectView(state: DataCollectState(listPath: []))) {
 					Text("Collect data")
 				}
 			}

@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct DataCollectView: View {
+	@ObservedObject var state: DataCollectState
+	
 	@State private var pathA: String = "file:///Users/haipham/Desktop/scripts/sample/"
 	@State private var pathB: String = "file:///Users/haipham/Desktop/scripts/sample/"
 	
 	@State private var isAnimation: Bool = true
+	let gradient = LinearGradient(gradient: Gradient(colors: [.orange, .green]),
+								  startPoint: .topLeading,
+								  endPoint: .bottomTrailing)
+	@Environment(\.colorScheme) private var colorScheme
 	var foreverAnimation: Animation? {
-		!isAnimation ? Animation.linear(duration: 2.0)
-			.repeatForever(autoreverses: false) : .default
+		!isAnimation ? Animation.linear(duration: 2.0).repeatForever(autoreverses: false) : .default
+	}
+	var foreverAnimationA: Animation? {
+		!isAnimation ? Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true) : .default
 	}
 	
+	@State private var startAnimation: Bool = false
+	
 	var body: some View {
-		
 		VStack {
 			// Header
 			headerView()
@@ -84,39 +93,93 @@ struct DataCollectView: View {
 	
 	@ViewBuilder
 	func contentView() -> some View {
-		
+		VStack {
+			ZStack(alignment: .center) {
+				Text("PROCESS DATA")
+					.frame(maxWidth: 100)
+					.padding(8)
+					.background(Capsule()
+						.stroke(gradient, lineWidth: 2)
+						.saturation(1.8))
+				Image(systemName: "fanblades")
+					.rotationEffect(Angle(degrees: self.isAnimation ? 360.0 : 0))
+					.animation(foreverAnimation, value: isAnimation)
+					.font(.system(size: 40, weight: .light))
+					.offset(x: 80, y: 0)
+					.foregroundColor(.yellow)
+				
+				Text("🚟")
+					.font(.custom("Arial", size: 50))
+					.offset(x: self.isAnimation ? -500 : -85)
+					.animation(foreverAnimationA, value: isAnimation)
+			}
+			
+			ScrollView {
+				LazyVStack(alignment: .leading, spacing: 4) {
+					ForEach(state.listPath) { path in
+						Text(path.location)
+						Divider()
+					}
+				}
+			}
+			.background(
+				Rectangle()
+					.stroke(gradient, lineWidth: 2)
+					.saturation(1.8)
+			)
+		}
 	}
 	
 	@ViewBuilder
 	func footerView() -> some View {
-		Button(action: {
-			isAnimation.toggle()
-			
-			// TODO: Do something with opened url
-		}, label: {
+		ZStack(alignment: .center) {
 			HStack {
-				ZStack {
-					Image(systemName: "gear")
-						.rotationEffect(Angle(degrees: self.isAnimation ? 360 : 0.0))
-						.animation(foreverAnimation, value: isAnimation)
-						.offset(x: -13, y: 0)
-					Image(systemName: "gear")
-						.rotationEffect(Angle(degrees: self.isAnimation ? 0 : 360.0))
-						.animation(foreverAnimation, value: isAnimation)
-						.offset(x: 0, y: -6)
-					Image(systemName: "gear")
-						.rotationEffect(Angle(degrees: self.isAnimation ? 360 : 0.0))
-						.animation(foreverAnimation, value: isAnimation)
-						.offset(x: 0, y: 7)
-				}
-				.padding(.top, 0)
+				Spacer()
 				
-				Text("START COLLECTING")
-					.frame(maxWidth: .infinity, maxHeight: .infinity)
-					.frame(alignment: .center)
+				Button(action: {
+					withAnimation(.easeInOut(duration: 4)) {
+						isAnimation.toggle()
+						state.startLoading {
+							isAnimation.toggle()
+							print("Action Completed...!")
+						}
+					}
+				}, label: {
+					HStack {
+						Text("START COLLECTING")
+							.frame(maxWidth: .infinity, maxHeight: .infinity)
+							.frame(alignment: .center)
+					}
+				})
+				.buttonStyle(NeumorphicButtonStyle(colorScheme: colorScheme))
+				.frame(maxWidth: 220, maxHeight: 50)
+				Spacer()
 			}
-		})
-		.frame(maxWidth: 200, maxHeight: 50)
+			
+			
+			Group {
+				Image(systemName: "gear")
+					.rotationEffect(Angle(degrees: self.isAnimation ? 360 : 0.0))
+					.animation(foreverAnimation, value: isAnimation)
+					.font(.system(size: 30))
+					.offset(x: -27, y: 0)
+					.foregroundColor(.blue)
+				Image(systemName: "gear")
+					.rotationEffect(Angle(degrees: self.isAnimation ? 0 : 360.0))
+					.animation(foreverAnimation, value: isAnimation)
+					.font(.system(size: 26))
+					.offset(x: -8, y: -9)
+					.foregroundColor(.yellow)
+				Image(systemName: "gear")
+					.rotationEffect(Angle(degrees: self.isAnimation ? 360 : 0.0))
+					.animation(foreverAnimation, value: isAnimation)
+					.font(.system(size: 22))
+					.offset(x: 0, y: 6)
+					.foregroundColor(.red)
+			}
+			.padding(.leading, -100)
+		}
+		.frame(height: 100)
 	}
 	
 	// Functions
@@ -141,12 +204,7 @@ struct DataCollectView: View {
 
 struct DataCollectView_Previews: PreviewProvider {
 	static var previews: some View {
-		DataCollectView()
-	}
-}
-
-extension View {
-	func withoutAnimation() -> some View {
-		self.animation(nil, value: UUID())
+		let state = DataCollectState(listPath: [])
+		DataCollectView(state: state)
 	}
 }

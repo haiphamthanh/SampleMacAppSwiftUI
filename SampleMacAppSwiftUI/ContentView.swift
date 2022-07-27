@@ -18,6 +18,10 @@ struct ContentView: View {
 				NavigationLink(destination: DataCollectView(state: DataCollectState(listPath: []))) {
 					Text("Collect data")
 				}
+				
+				NavigationLink(destination: CookieView(state: CookieState())) {
+					Text("Webview")
+				}
 			}
 			.navigationTitle("Navigation")
 		}

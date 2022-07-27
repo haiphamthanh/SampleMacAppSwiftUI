@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D391465B289190F400F1CB97 /* CookieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391465A289190F400F1CB97 /* CookieView.swift */; };
+		D391465E2891932C00F1CB97 /* CookieState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391465D2891932C00F1CB97 /* CookieState.swift */; };
+		D391467B2891A1AD00F1CB97 /* CookieUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391467A2891A1AD00F1CB97 /* CookieUtils.swift */; };
+		D39146832891BC3700F1CB97 /* run.sh in Resources */ = {isa = PBXBuildFile; fileRef = D391467F2891BC3700F1CB97 /* run.sh */; };
+		D39146842891BC3700F1CB97 /* setup_tools.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146812891BC3700F1CB97 /* setup_tools.sh */; };
+		D39146852891BC3700F1CB97 /* generate_ssh.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146822891BC3700F1CB97 /* generate_ssh.sh */; };
+		D39146882891BC6C00F1CB97 /* some.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146872891BC6C00F1CB97 /* some.sh */; };
 		D3999E09288DC6E300843906 /* DataCollectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3999E08288DC6E300843906 /* DataCollectState.swift */; };
 		D3999E0C288DDCF400843906 /* NeumorphicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3999E0B288DDCF400843906 /* NeumorphicButtonStyle.swift */; };
 		D3C06649288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C06648288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift */; };
@@ -18,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D391465A289190F400F1CB97 /* CookieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieView.swift; sourceTree = "<group>"; };
+		D391465D2891932C00F1CB97 /* CookieState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieState.swift; sourceTree = "<group>"; };
+		D391467A2891A1AD00F1CB97 /* CookieUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieUtils.swift; sourceTree = "<group>"; };
+		D391467F2891BC3700F1CB97 /* run.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run.sh; sourceTree = "<group>"; };
+		D39146812891BC3700F1CB97 /* setup_tools.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup_tools.sh; sourceTree = "<group>"; };
+		D39146822891BC3700F1CB97 /* generate_ssh.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_ssh.sh; sourceTree = "<group>"; };
+		D39146872891BC6C00F1CB97 /* some.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = some.sh; sourceTree = "<group>"; };
 		D3999E08288DC6E300843906 /* DataCollectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectState.swift; sourceTree = "<group>"; };
 		D3999E0B288DDCF400843906 /* NeumorphicButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButtonStyle.swift; sourceTree = "<group>"; };
 		D3C06645288D9F0E00183AAD /* SampleMacAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMacAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,9 +56,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D391465C2891931C00F1CB97 /* Cookie */ = {
+			isa = PBXGroup;
+			children = (
+				D391465A289190F400F1CB97 /* CookieView.swift */,
+				D391465D2891932C00F1CB97 /* CookieState.swift */,
+				D391467A2891A1AD00F1CB97 /* CookieUtils.swift */,
+			);
+			path = Cookie;
+			sourceTree = "<group>";
+		};
+		D391467E2891BC3700F1CB97 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				D391467F2891BC3700F1CB97 /* run.sh */,
+				D39146802891BC3700F1CB97 /* src */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		D39146802891BC3700F1CB97 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D39146812891BC3700F1CB97 /* setup_tools.sh */,
+				D39146822891BC3700F1CB97 /* generate_ssh.sh */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		D39146862891BC4E00F1CB97 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				D39146872891BC6C00F1CB97 /* some.sh */,
+				D391467E2891BC3700F1CB97 /* system */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		D3999E0A288DDCEB00843906 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D39146862891BC4E00F1CB97 /* scripts */,
 				D3999E0B288DDCF400843906 /* NeumorphicButtonStyle.swift */,
 			);
 			path = Utils;
@@ -93,6 +145,7 @@
 		D3C06658288DA9B600183AAD /* Generation */ = {
 			isa = PBXGroup;
 			children = (
+				D391465C2891931C00F1CB97 /* Cookie */,
 				D3C0665A288DA9F100183AAD /* GenerationView.swift */,
 			);
 			path = Generation;
@@ -165,7 +218,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39146882891BC6C00F1CB97 /* some.sh in Resources */,
+				D39146842891BC3700F1CB97 /* setup_tools.sh in Resources */,
+				D39146832891BC3700F1CB97 /* run.sh in Resources */,
 				D3C06650288D9F0F00183AAD /* Preview Assets.xcassets in Resources */,
+				D39146852891BC3700F1CB97 /* generate_ssh.sh in Resources */,
 				D3C0664D288D9F0F00183AAD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,11 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C0664B288D9F0E00183AAD /* ContentView.swift in Sources */,
+				D391467B2891A1AD00F1CB97 /* CookieUtils.swift in Sources */,
 				D3999E0C288DDCF400843906 /* NeumorphicButtonStyle.swift in Sources */,
+				D391465B289190F400F1CB97 /* CookieView.swift in Sources */,
 				D3C06649288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift in Sources */,
 				D3999E09288DC6E300843906 /* DataCollectState.swift in Sources */,
 				D3C0665B288DA9F100183AAD /* GenerationView.swift in Sources */,
 				D3C0665D288DAE5200183AAD /* DataCollectView.swift in Sources */,
+				D391465E2891932C00F1CB97 /* CookieState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

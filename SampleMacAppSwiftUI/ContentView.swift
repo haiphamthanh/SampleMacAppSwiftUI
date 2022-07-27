@@ -11,7 +11,7 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			VStack(spacing: 30) {
-				NavigationLink(destination: GenerationView()) {
+				NavigationLink(destination: GenerationView(state: DataCollectState(listPath: []))) {
 					Text("Monitoring data")
 				}
 				

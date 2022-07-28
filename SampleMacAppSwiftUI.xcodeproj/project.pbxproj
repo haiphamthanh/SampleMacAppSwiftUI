@@ -14,6 +14,7 @@
 		D39146842891BC3700F1CB97 /* setup_tools.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146812891BC3700F1CB97 /* setup_tools.sh */; };
 		D39146852891BC3700F1CB97 /* generate_ssh.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146822891BC3700F1CB97 /* generate_ssh.sh */; };
 		D39146882891BC6C00F1CB97 /* some.sh in Resources */ = {isa = PBXBuildFile; fileRef = D39146872891BC6C00F1CB97 /* some.sh */; };
+		D391468C2891C58F00F1CB97 /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391468B2891C58F00F1CB97 /* CommandView.swift */; };
 		D3999E09288DC6E300843906 /* DataCollectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3999E08288DC6E300843906 /* DataCollectState.swift */; };
 		D3999E0C288DDCF400843906 /* NeumorphicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3999E0B288DDCF400843906 /* NeumorphicButtonStyle.swift */; };
 		D3C06649288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C06648288D9F0E00183AAD /* SampleMacAppSwiftUIApp.swift */; };
@@ -32,6 +33,7 @@
 		D39146812891BC3700F1CB97 /* setup_tools.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup_tools.sh; sourceTree = "<group>"; };
 		D39146822891BC3700F1CB97 /* generate_ssh.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_ssh.sh; sourceTree = "<group>"; };
 		D39146872891BC6C00F1CB97 /* some.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = some.sh; sourceTree = "<group>"; };
+		D391468B2891C58F00F1CB97 /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
 		D3999E08288DC6E300843906 /* DataCollectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectState.swift; sourceTree = "<group>"; };
 		D3999E0B288DDCF400843906 /* NeumorphicButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButtonStyle.swift; sourceTree = "<group>"; };
 		D3C06645288D9F0E00183AAD /* SampleMacAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMacAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,13 @@
 			path = scripts;
 			sourceTree = "<group>";
 		};
+		D391468D2891D38500F1CB97 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
 		D3999E0A288DDCEB00843906 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +130,7 @@
 		D3C06647288D9F0E00183AAD /* SampleMacAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				D391468D2891D38500F1CB97 /* Vendors */,
 				D3999E0A288DDCEB00843906 /* Utils */,
 				D3C06659288DA9C500183AAD /* DataCollection */,
 				D3C06658288DA9B600183AAD /* Generation */,
@@ -147,6 +157,7 @@
 			children = (
 				D391465C2891931C00F1CB97 /* Cookie */,
 				D3C0665A288DA9F100183AAD /* GenerationView.swift */,
+				D391468B2891C58F00F1CB97 /* CommandView.swift */,
 			);
 			path = Generation;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 				D3999E09288DC6E300843906 /* DataCollectState.swift in Sources */,
 				D3C0665B288DA9F100183AAD /* GenerationView.swift in Sources */,
 				D3C0665D288DAE5200183AAD /* DataCollectView.swift in Sources */,
+				D391468C2891C58F00F1CB97 /* CommandView.swift in Sources */,
 				D391465E2891932C00F1CB97 /* CookieState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,51 +13,52 @@ struct ContentView: View {
 	"""
 	
 	var body: some View {
-		VStack {
-			TextEditor(text: $text)
-				.font(.title)
-				.frame(minWidth: 700, minHeight: 500)
-			
-			HStack {
-				// New text button.
-				Button(action: {
-					text = ""
-				}, label: {
-					HStack {
-						Image(systemName: "plus")
-						Text("New")
-					}
-					.frame(width: 80)
-				})
-				
-				Spacer()
-				
-				// Save button.
-				Button(action: {
-					let saveURL = showSavePanel()
-					writeText(to: saveURL)
-				}, label: {
-					HStack {
-						Image(systemName: "square.and.arrow.down")
-						Text("Save")
-					}
-					.frame(width: 80)
-				})
-				
-				// Open button.
-				Button(action: {
-					let openURL = showOpenPanel()
-					readText(from: openURL)
-				}, label: {
-					HStack {
-						Image(systemName: "square.and.arrow.up")
-						Text("Open")
-					}
-					.frame(width: 80)
-				})
-			}
-			.padding(20)
-		}
+		NestedView()
+//		VStack {
+//			TextEditor(text: $text)
+//				.font(.title)
+//				.frame(minWidth: 700, minHeight: 500)
+//
+//			HStack {
+//				// New text button.
+//				Button(action: {
+//					text = ""
+//				}, label: {
+//					HStack {
+//						Image(systemName: "plus")
+//						Text("New")
+//					}
+//					.frame(width: 80)
+//				})
+//
+//				Spacer()
+//
+//				// Save button.
+//				Button(action: {
+//					let saveURL = showSavePanel()
+//					writeText(to: saveURL)
+//				}, label: {
+//					HStack {
+//						Image(systemName: "square.and.arrow.down")
+//						Text("Save")
+//					}
+//					.frame(width: 80)
+//				})
+//
+//				// Open button.
+//				Button(action: {
+//					let openURL = showOpenPanel()
+//					readText(from: openURL)
+//				}, label: {
+//					HStack {
+//						Image(systemName: "square.and.arrow.up")
+//						Text("Open")
+//					}
+//					.frame(width: 80)
+//				})
+//			}
+//			.padding(20)
+//		}
 	}
 	
 	
